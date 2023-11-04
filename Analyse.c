@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "SortAlgs.c"
 
-#define NB_PTS_MAX 10000
+#define NB_PTS_MAX 100000
 #define NB_METH_MAX 10
 
 void RandomInit(int T[],int n){
@@ -44,7 +44,7 @@ int main() {
         int* T = (int*)malloc(NB_PTS_MAX*sizeof(int)), nb_pts, nb_meth;
         double* M = (double*)malloc(NB_METH_MAX*sizeof(double));
         srand(time(NULL));
-        for (nb_pts=0 ; nb_pts<=NB_PTS_MAX ; nb_pts+=5000){
+        for (nb_pts=0 ; nb_pts<=NB_PTS_MAX ; nb_pts+=1000){
             RandomInit(T,nb_pts);
             M[0] = tri_bulle(T,nb_pts);
             M[1] = tri_insertion(T,nb_pts);
